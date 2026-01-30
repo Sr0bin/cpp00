@@ -26,7 +26,7 @@ SOURCES = $(addprefix $(SOURCES_DIR)/,\
  
 #OBJECTS#######################
 
-OBJ_DIR = obj
+OBJ_DIR = .obj
 
 OBJECTS = $(SOURCES:%.cpp=$(OBJ_DIR)/%.o)
 

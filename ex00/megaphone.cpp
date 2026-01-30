@@ -6,7 +6,7 @@
 /*   By: rorollin <rorollin@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/19 16:04:05 by rorollin          #+#    #+#             */
-/*   Updated: 2026/01/21 16:30:07 by rorollin         ###   ########.fr       */
+/*   Updated: 2026/01/21 19:40:15 by rorollin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,6 @@ int	main(int argc, char *argv[])
 	}
 	for (int i = 1; i < argc; ++i)
 		std::cout << upper_string(argv[i]);
-	std::cout << '\n';
+	// std::cout << '\n';
 	return (0);
 }
