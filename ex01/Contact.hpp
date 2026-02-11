@@ -6,7 +6,7 @@
 /*   By: rorollin <rorollin@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/28 18:43:12 by rorollin          #+#    #+#             */
-/*   Updated: 2026/01/30 13:52:50 by rorollin         ###   ########.fr       */
+/*   Updated: 2026/02/11 11:10:54 by rorollin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,8 @@ private:
 	std::string	_darkestSecret;
 public:
 	Contact();
-	Contact(std::string name);
+	Contact(std::string name, std::string lastName, std::string nickname,
+		 std::string phoneNumber, std::string darkestSecret);
 	~Contact();
 	void	printContact();
 	void	setContact(std::string name);
