@@ -6,7 +6,7 @@
 /*   By: rorollin <rorollin@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/30 12:11:37 by rorollin          #+#    #+#             */
-/*   Updated: 2026/02/17 21:22:14 by rorollin         ###   ########.fr       */
+/*   Updated: 2026/02/17 22:36:22 by rorollin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,15 +39,15 @@ SEARCH, ADD, or EXIT !\n";
 					phonebook.displayPhonebook();
 					break;
 				}
-			case (EXIT):
-				{
-					std::cout << "Exiting, thanks for searching !\n";
-					return (0);
-				}
 			case (INVALID):
 				{
 					std::cout << "Please enter a valid command : SEARCH, ADD or EXIT\n";
 					break;
+				}
+			case (EXIT):
+				{
+					std::cout << "Exiting, thanks for searching !\n";
+					return (0);
 				}
 			case (ENDOFFILE):
 				{
