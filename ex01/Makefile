@@ -16,7 +16,7 @@ NAME = phonebook
 
 SOURCES_DIR = .
 
-SOURCES_NAME = PhoneBook.cpp Contact.cpp main.cpp print.cpp
+SOURCES_NAME = PhoneBook.cpp Contact.cpp main.cpp io.cpp
 
 #---------------------------
 

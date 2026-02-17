@@ -6,11 +6,12 @@
 /*   By: rorollin <rorollin@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/30 12:11:37 by rorollin          #+#    #+#             */
-/*   Updated: 2026/02/11 11:11:45 by rorollin         ###   ########.fr       */
+/*   Updated: 2026/02/17 21:22:14 by rorollin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
+#include "io.hpp"
 #include <iostream>
 #include <string>
 
@@ -18,10 +19,41 @@
 int	main()
 {
 	PhoneBook phonebook;
-	for (int i = 0; i < 20 ; i++)
+
+	std::cout << "Welcome to this phonebook ! Please enter a valid command :\n\
+SEARCH, ADD, or EXIT !\n";
+	while (true)
 	{
-		Contact contact("test", "Lastname", "nickname", "phonenumber", "darkest");
-		phonebook.addContact(contact);
+		switch (getCommand())
+		{
+			case (ADD):
+				{
+					Contact cont = cinContact();
+					if (std::cin.eof())
+						break;
+					phonebook.addContact(cont);
+					break;
+				}
+			case (SEARCH):
+				{
+					phonebook.displayPhonebook();
+					break;
+				}
+			case (EXIT):
+				{
+					std::cout << "Exiting, thanks for searching !\n";
+					return (0);
+				}
+			case (INVALID):
+				{
+					std::cout << "Please enter a valid command : SEARCH, ADD or EXIT\n";
+					break;
+				}
+			case (ENDOFFILE):
+				{
+					std::cout << "EOF detected.\n";
+					return (0);
+				}
+		}
 	}
-	phonebook.searchContact();
 }

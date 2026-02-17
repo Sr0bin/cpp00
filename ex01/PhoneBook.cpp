@@ -6,30 +6,99 @@
 /*   By: rorollin <rorollin@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/30 10:23:45 by rorollin          #+#    #+#             */
-/*   Updated: 2026/02/05 17:55:06 by rorollin         ###   ########.fr       */
+/*   Updated: 2026/02/17 21:21:39 by rorollin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "print.hpp"
+#include "io.hpp"
 #include "PhoneBook.hpp"
+#include <iostream>
+#include <iomanip>
 
 PhoneBook::PhoneBook() : added_contact(0)
 {
-	print_default_constructor("PhoneBook");
+	// print_default_constructor("PhoneBook");
 }
 
 PhoneBook::~PhoneBook()
 {
-	print_destructor("PhoneBook");
+	// print_destructor("PhoneBook");
 }
 
 void PhoneBook::addContact(Contact new_contact)
 {
 	contactList[added_contact++ % MAX_CONTACT] = new_contact;
 }
+
+void	PhoneBook::printFullHeader()
+{
+	std::string	strings[] = 
+		{"First Name", 
+		"Last Name",
+		"Nickname",
+		"Phone Number",
+		"Darkest secret"};
+	size_t	nbr_elem = sizeof(strings) / sizeof(strings[0]);
+	
+	for (size_t	size = 0; size < nbr_elem; size++)
+		printTrunc(strings[size], "|");
+	size_t len = (10 * nbr_elem) + nbr_elem;
+	std::cout << "\n";
+	for (size_t i = 0; i < len; i++)
+		std::cout << "=";
+	std::cout << "\n";
+
+}
+void	PhoneBook::printHeader()
+{
+	std::string	strings[] = 
+		{"Index",
+		"First Name", 
+		"Last Name",
+		"Nickname"};
+	size_t	nbr_elem = sizeof(strings) / sizeof(strings[0]);
+	
+	for (size_t	size = 0; size < nbr_elem; size++)
+		printTrunc(strings[size], "|");
+	size_t len = (10 * nbr_elem) + nbr_elem;
+	std::cout << "\n";
+	for (size_t i = 0; i < len; i++)
+		std::cout << "=";
+	std::cout << "\n";
+}
+
+void	PhoneBook::displayPhonebook()
+{	
+	printHeader();
+	for (size_t i = 0; i < added_contact && i < MAX_CONTACT; i++)
+	{
+		printTrunc(i, "|");
+		contactList[i].printContact();
+	}
+	if (added_contact == 0)
+		return ;
+	size_t	index = 0;
+	while (true)
+	{
+		index = asksizetUser("Please choose the index of the contact you want to display :");
+		if (index >= added_contact || index >= MAX_CONTACT) 
+		{
+			std::cout << "Index out of phonebook range.\n";
+			continue ;
+		}
+		else
+			break;
+	}
+	printFullHeader();
+	contactList[index].printFullContact();
+}
+
 Contact* PhoneBook::searchContact()
 {
-	for (size_t i = 0; i < added_contact && i < MAX_CONTACT ; i++)
+	for (size_t i = 0; i < added_contact && i < MAX_CONTACT; i++)
+	{
+		printTrunc(i, "|");
 		contactList[i].printContact();
+	}
 	return NULL;
 }

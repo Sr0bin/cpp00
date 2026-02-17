@@ -6,11 +6,14 @@
 /*   By: rorollin <rorollin@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/28 18:43:12 by rorollin          #+#    #+#             */
-/*   Updated: 2026/02/11 11:10:54 by rorollin         ###   ########.fr       */
+/*   Updated: 2026/02/17 21:06:36 by rorollin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string>
+#ifndef CONTACT_HPP
+# define CONTACT_HPP
+
+# include <string>
 
 class Contact {
 private:
@@ -25,5 +28,8 @@ public:
 		 std::string phoneNumber, std::string darkestSecret);
 	~Contact();
 	void	printContact();
+	void	printFullContact();
 	void	setContact(std::string name);
 };
+
+#endif
