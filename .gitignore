@@ -2,7 +2,8 @@
 *.o
 *.d
 *.txt
-megaphone
+ex00/megaphone
+ex01/phonebook
 .obj/
 .gitmodules
 .gdb_history
