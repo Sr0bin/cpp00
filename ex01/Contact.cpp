@@ -6,7 +6,7 @@
 /*   By: rorollin <rorollin@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/28 18:48:52 by rorollin          #+#    #+#             */
-/*   Updated: 2026/02/17 21:06:36 by rorollin         ###   ########.fr       */
+/*   Updated: 2026/02/19 20:15:21 by rorollin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,11 +34,12 @@ Contact::~Contact()
 
 void	Contact::printFullContact()
 {
-	printTrunc(this->_name, "|");
-	printTrunc(this->_lastName, "|");
-	printTrunc(this->_nickname, "|");
-	printTrunc(this->_phoneNumber, "|");
-	printTrunc(this->_darkestSecret, "|");
+
+	std::cout << "First Name : " << this->_name << std::endl;
+	std::cout << "Last name : " << this->_lastName << std::endl;
+	std::cout << "Nickname : " << this->_nickname << std::endl;
+	std::cout << "Phone Number : " << this->_phoneNumber << std::endl;
+	std::cout << "Darkest Secret : " << this->_darkestSecret << std::endl;
 	std::cout << "\n";
 
 }

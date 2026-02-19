@@ -6,7 +6,7 @@
 /*   By: rorollin <rorollin@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/17 00:00:00 by rorollin          #+#    #+#             */
-/*   Updated: 2026/02/17 21:22:14 by rorollin         ###   ########.fr       */
+/*   Updated: 2026/02/19 20:29:04 by rorollin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,8 @@ Command	getCommand()
 {
 	std::string command;
 
+	if (std::cin.eof())
+		return (ENDOFFILE);
 	command = askUser("Please enter command :");
 	if (std::cin.eof())
 		return (ENDOFFILE);
@@ -61,7 +63,7 @@ Command	getCommand()
 	return (INVALID);
 }
 
-size_t	asksizetUser(std::string question)
+size_t	askSizetUser(std::string question)
 {
 	size_t	answer = 0;
 
@@ -72,6 +74,8 @@ size_t	asksizetUser(std::string question)
 		if (std::cin.fail())
 		{
 			std::cout << "Invalid integer input.\n";
+			if (std::cin.eof())
+				return (0);
 			std::cin.clear();
 			std::string trash;
 			std::getline(std::cin, trash);
@@ -89,6 +93,8 @@ std::string	askUser(std::string question)
 {
 	std::string answer;
 
+	if (std::cin.eof())
+		return ("");
 	std::cout << question << "\n";
 	while (std::getline(std::cin, answer) && answer.length() == 0)
 	{

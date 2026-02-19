@@ -6,7 +6,7 @@
 /*   By: rorollin <rorollin@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/30 10:23:47 by rorollin          #+#    #+#             */
-/*   Updated: 2026/02/17 21:08:43 by rorollin         ###   ########.fr       */
+/*   Updated: 2026/02/19 20:17:44 by rorollin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@ private:
 	size_t	added_contact;
 	Contact contactList[MAX_CONTACT];
 	static void	printHeader();
-	static void	printFullHeader();
 
 public:
 	PhoneBook();

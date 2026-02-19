@@ -6,7 +6,7 @@
 /*   By: rorollin <rorollin@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/30 10:23:45 by rorollin          #+#    #+#             */
-/*   Updated: 2026/02/17 21:21:39 by rorollin         ###   ########.fr       */
+/*   Updated: 2026/02/19 20:27:51 by rorollin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,25 +30,6 @@ void PhoneBook::addContact(Contact new_contact)
 	contactList[added_contact++ % MAX_CONTACT] = new_contact;
 }
 
-void	PhoneBook::printFullHeader()
-{
-	std::string	strings[] = 
-		{"First Name", 
-		"Last Name",
-		"Nickname",
-		"Phone Number",
-		"Darkest secret"};
-	size_t	nbr_elem = sizeof(strings) / sizeof(strings[0]);
-	
-	for (size_t	size = 0; size < nbr_elem; size++)
-		printTrunc(strings[size], "|");
-	size_t len = (10 * nbr_elem) + nbr_elem;
-	std::cout << "\n";
-	for (size_t i = 0; i < len; i++)
-		std::cout << "=";
-	std::cout << "\n";
-
-}
 void	PhoneBook::printHeader()
 {
 	std::string	strings[] = 
@@ -80,7 +61,9 @@ void	PhoneBook::displayPhonebook()
 	size_t	index = 0;
 	while (true)
 	{
-		index = asksizetUser("Please choose the index of the contact you want to display :");
+		index = askSizetUser("Please choose the index of the contact you want to display :");
+		if (std::cin.eof())
+			return ;
 		if (index >= added_contact || index >= MAX_CONTACT) 
 		{
 			std::cout << "Index out of phonebook range.\n";
@@ -89,7 +72,7 @@ void	PhoneBook::displayPhonebook()
 		else
 			break;
 	}
-	printFullHeader();
+	std::cout << "=======================================\n";
 	contactList[index].printFullContact();
 }
 

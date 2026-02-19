@@ -6,7 +6,7 @@
 /*   By: rorollin <rorollin@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/17 00:00:00 by rorollin          #+#    #+#             */
-/*   Updated: 2026/02/17 21:22:14 by rorollin         ###   ########.fr       */
+/*   Updated: 2026/02/19 20:26:02 by rorollin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void		printTrunc(size_t i, std::string sep);
 std::string	strtrunc(const std::string str, size_t width);
 
 std::string	askUser(std::string question);
-size_t	asksizetUser(std::string question);
+size_t	askSizetUser(std::string question);
 Contact cinContact();
 Command	getCommand();
 
